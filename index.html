@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>विं. दा. करंदीकर माहिती</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            background-image: url('i.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .content-container {
+            max-width: 92%;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .author-image {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .author-image img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+        p {
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .author-image img:hover {
+            transform: scale(1.05);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        li:before {
+            content: "•";
+            color: #4CAF50;
+            font-weight:bold;
+            position: absolute;
+            left: 0;
+            height: 10px;
+        }
+
+        .translate-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 12px 25px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+        .translate-btn:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .content-container {
+                padding: 15px;
+            }
+
+            .translate-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content-container {
+                padding: 10px;
+            }
+
+            .translate-btn {
+                padding: 8px 15px;
+                font-size: 22px;
+            }
+
+            h1, h2, h3 {
+                font-size: 1.2em;
+            }
+
+            .author-image img {
+                max-width: 100%;
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="content-container">
+        <h1>विं. दा. करंदीकर</h1>
+        <div class="author-image">
+            <img src="image.png" alt="विं. दा. करंदीकर">
+        </div>
+
+        <div id="marathi-content">
+            <p>(२३ ऑगस्ट १९१८ - १४ मार्च २०१०)</p>
+            <p>“ज्ञानपीठ” पुरस्कार विजेते गोविंद विनायक करंदीकर यांची कामगिरी कवी, लघु निबंधकार, भाषांतरकार, विचारवंत व समीक्षक अशा विविध नात्यांनी मोलाची आहे. परंपरेचा स्वीकार करून नवतेच्या दिशा शोधणे, जीवनाकडे व काव्याकडे पाहण्याचा खुला व बहुतत्ववादी दृष्टिकोन ही त्यांच्या काव्याची वैशिष्ट्ये आहेत.</p>
+
+            <h2>महत्वाचे साहित्यिक योगदान:</h2>
+            <h3>काव्य संग्रह:</h3>
+            <ul>
+                <li>जातक</li>
+                <li>अष्टदर्शने</li>
+                <li>मृद्गंध</li>
+                <li>धृपद</li>
+                <li>विरुपिका</li>
+                <li>स्वेदगंधा</li>
+                <li>आदिमाया</li>
+            </ul>
+
+            <h3>पुरस्कार:</h3>
+            <ul>
+                <li>कबीर पुरस्कार</li>
+                <li>कवी कुसुमाग्रज पुरस्कार</li>
+                <li>कुमारन आसन पुरस्कार</li>
+                <li>केशवसुत पुरस्कार</li>
+                <li>कोणार्क पुरस्कार</li>
+                <li>जनस्थान पुरस्कार</li>
+                <li>साहित्य अकादमी पुरस्कार</li>
+                <li>ज्ञानपीठ</li>
+                <li>सोव्हिएत लँड नेहरू पुरस्कार</li>
+            </ul>
+        </div>
+
+        <button class="translate-btn">English </button>
+    </div>
+
+    <script>
+        const translateBtn = document.querySelector(".translate-btn");
+        const marathiContent = document.getElementById("marathi-content");
+        let isMarathi = true;
+
+        translateBtn.addEventListener("click", function() {
+            if (isMarathi) {
+                // Switch to English
+                translateBtn.textContent = "मराठी ";
+                document.documentElement.lang = "en";
+                marathiContent.innerHTML = `
+                    <p>(23 August 1918 - 14 March 2010)</p>
+                    <p>"Jnanpith" award winner Govind Vinayak Karandikar's work is valuable in various roles such as poet, short essayist, translator, thinker, and critic. Accepting tradition and exploring new directions, an open and pluralistic perspective towards life and poetry are the characteristics of his poetry.</p>
+
+                    <h2>Important Literary Contributions:</h2>
+                    <h3>Poetry Collections:</h3>
+                    <ul>
+                        <li>Jatak</li>
+                        <li>Ashtadarshane</li>
+                        <li>Mridgandha</li>
+                        <li>Dhrupad</li>
+                        <li>Virupika</li>
+                        <li>Swedgandha</li>
+                        <li>Adimaya</li>
+                    </ul>
+
+                    <h3>Awards:</h3>
+                    <ul>
+                        <li>Kabir Award</li>
+                        <li>Kavi Kusumagraj Award</li>
+                        <li>Kumaran Asan Award</li>
+                        <li>Keshavsut Award</li>
+                        <li>Konark Award</li>
+                        <li>Janasthan Award</li>
+                        <li>Sahitya Akademi Award</li>
+                        <li>Jnanpith</li>
+                        <li>Soviet Land Nehru Award</li>
+                    </ul>
+                `;
+            } else {
+                // Switch back to Marathi
+                document.documentElement.lang = "mr";
+                location.reload();
+            }
+            isMarathi = !isMarathi;
+        });
+    </script>
+</body>
+</html>
